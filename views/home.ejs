@@ -1,0 +1,35 @@
+<%- include('partials/headPartials') %>
+</head>
+<body class="bg-gray-100 flex flex-col items-center min-h-screen">
+  <!-- Header -->
+  <header class="w-full bg-slate-600 text-white py-4">
+    <div class="max-w-4xl mx-auto flex justify-center">
+      <a
+        href="/host/enter-house"
+        class="text-center bg-blue-500 hover:bg-blue-600 py-2 px-4 rounded-md transition duration-300 ease-in-out"
+      >
+        Add home
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="w-full max-w-4xl bg-white shadow-lg rounded-lg mt-8 p-6 border-dashed ">
+    <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">House Listings</h1>
+    <div class="bg-slate-400 border-4 border-red-700" >
+    <ul class="flex flex-wrap ">
+      <% houseArray.forEach(home => { %>
+      <li class="p-4 border-b border-4 border-green-700 w-30 m-auto mb-2">
+        <img src="https://images.pexels.com/photos/731082/pexels-photo-731082.jpeg?cs=srgb&dl=pexels-sebastians-731082.jpg&fm=jpg" alt="houseimage" class="w-15 h-15">
+        <p><strong>House Name:</strong> <%= home.housename %></p>
+        <p><strong>Price:</strong> <%= home.price %></p>
+        <p><strong>City:</strong> <%= home.city %></p>
+        <p><strong>Country:</strong> <%= home.country %></p>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+
+  </main>
+</body>
+</html>
